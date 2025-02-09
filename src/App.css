@@ -1,2 +1,12 @@
 main {
+  
+}
+.custom-shadow {
+  text-shadow: 1px 1px 20px #5c97bf9c;
+}
+.bdr{
+  border: red 1px solid;
+}
+.upper-height{
+  height: calc(100vh - 100px)
 }
