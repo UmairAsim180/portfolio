@@ -19,11 +19,27 @@ export default function App() {
           <div className="h-full flex justify-center items-center p-4">
            <div className="text-4xl font-bold">
              <Particles
+               id="tsparticles"
+               init={particlesInit}
                options={{
+                 background: {
+                   color: {
+                     value: "transparent",
+                   },
+                 },
                  particles: {
                    number: { value: 50 },
-                   move: { speed: 2 },
+                   move: {
+                     enable: true,
+                     speed: 2,
+                   },
                    color: { value: "#ffffff" },
+                   size: {
+                     value: 3,
+                   },
+                   opacity: {
+                     value: 0.7,
+                   },
                  },
                }}
              />
