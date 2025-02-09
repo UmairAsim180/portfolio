@@ -1,6 +1,3 @@
-main {
-  
-}
 .custom-shadow {
   text-shadow: 1px 1px 20px #5c97bf9c;
 }
@@ -8,5 +5,25 @@ main {
   border: red 1px solid;
 }
 .upper-height{
-  height: calc(100vh - 100px)
+  height: calc(100vh - 100px);
+}
+/* Width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1a1a1a; /* Dark background */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #1c1c1c; /* Blue color */
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #424242; /* Darker blue */
 }

@@ -2,16 +2,17 @@ import "./index.css";
 import "./App.css";
 import Typewriter from "react-typewriter-effect";
 import Navbar from "./components/Navbar";
+import Contact from "./components/Contact";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { TbBrandFiverr } from "react-icons/tb";
 
 export default function App() {
   return (
-    <div className="bg-black text-white font-poppins ">
+    <div className="bg-black text-white font-poppins">
       <Navbar />
       <main className="p-4">
         {/* Upper div */}
-        <div className="upper flex justify-between items-center bdr upper-height p-4">
+        <div className="upper flex justify-between items-center border-x-2 mx-2 upper-height px-6 py-4">
           {/* Type writer  */}
           <div className="typewriter mt-6 w-[60vw]">
             <div className="custom-shadow text-5xl font-bold ">
@@ -52,7 +53,11 @@ export default function App() {
           <div className="image bdr">IMAGE</div>
         </div>
         <div className="About">
-          About
+          <h2 className="text-center text-3xl my-3 font-bold">About Me</h2>
+        </div>
+        <div className="Contact">
+          <h2 className="text-center text-3xl my-3 font-bold">Contact</h2>
+          <Contact/>
         </div>
       </main>
     </div>
