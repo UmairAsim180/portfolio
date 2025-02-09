@@ -24,6 +24,7 @@
     "vite": "^5.0.0"
   },
   "dependencies": {
+    "react-scroll-parallax": "^3.4.5",
     "react-tsparticles": "^2.12.2",
     "react-typewriter-effect": "^1.1.0",
     "tsparticles": "^3.8.1"
