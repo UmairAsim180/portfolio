@@ -12,7 +12,7 @@ export default function App() {
   }, []);
   return (
     <div className="bg-black h-[100vh] text-white">
-      
+
       <Navbar />
       <main>
         <div className="m-4 flex h-[40vh]">
@@ -28,14 +28,14 @@ export default function App() {
                    },
                  },
                  particles: {
-                   number: { value: 50 },
+                   number: { value: 100 },
                    move: {
                      enable: true,
                      speed: 2,
                    },
                    color: { value: "#ffffff" },
                    size: {
-                     value: 3,
+                     value: 5,
                    },
                    opacity: {
                      value: 0.7,
@@ -58,7 +58,7 @@ export default function App() {
                delay={2000}
              />
            </div> 
-            
+
           </div>
           <div>other block image</div>
         </div>
