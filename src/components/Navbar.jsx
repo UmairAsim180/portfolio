@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Navbar() {
   return (
-    <nav className="bg-gray-800 px-8 py-4">
+    <nav className="px-8 py-4">
       <div className="flex justify-between items-center">
         <div className="text-white text-2xl font-bold">
           <a href="/">Logo</a>
