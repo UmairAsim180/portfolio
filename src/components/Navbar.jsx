@@ -1,18 +1,19 @@
 
 import React from 'react';
-import './Navbar.css';
 
 export default function Navbar() {
   return (
-    <nav className="navbar">
-      <div className="navbar-brand">
-        <a href="/">Logo</a>
+    <nav className="bg-gray-800 px-8 py-4">
+      <div className="flex justify-between items-center">
+        <div className="text-white text-2xl font-bold">
+          <a href="/">Logo</a>
+        </div>
+        <ul className="flex space-x-8">
+          <li><a href="/" className="text-white hover:text-gray-300">Home</a></li>
+          <li><a href="/about" className="text-white hover:text-gray-300">About</a></li>
+          <li><a href="/contact" className="text-white hover:text-gray-300">Contact</a></li>
+        </ul>
       </div>
-      <ul className="navbar-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
     </nav>
   );
 }
