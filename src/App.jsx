@@ -1,7 +1,6 @@
 import "./index.css";
 import "./App.css";
 import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
 import Typewriter from "react-typewriter-effect";
 import Navbar from "./components/Navbar";
 
@@ -11,22 +10,21 @@ export default function App() {
   };
   return (
     <div className="bg-black h-[100vh] text-white">
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        options={{
-          particles: {
-            number: { value: 50 },
-            move: { speed: 2 },
-            color: { value: "#ffffff" },
-          },
-        }}
-      />
+      
       <Navbar />
       <main>
         <div className="m-4 flex h-[40vh]">
           <div className="h-full flex justify-center items-center p-4">
            <div className="text-4xl font-bold">
+             <Particles
+               options={{
+                 particles: {
+                   number: { value: 50 },
+                   move: { speed: 2 },
+                   color: { value: "#ffffff" },
+                 },
+               }}
+             />
              <Typewriter
                multiText={[
                  "Hi, I'm Umair! 👋",
