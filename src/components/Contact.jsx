@@ -1,12 +1,15 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
-const ContactForm = () => {
+
+const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
+
+  const [isSending, setIsSending] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -14,14 +17,33 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Submitted", formData);
-    alert("Message Sent Successfully!");
-    setFormData({ name: "", email: "", message: "" });
+    setIsSending(true);
+
+    emailjs
+      emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formData,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          alert("Message sent successfully!");
+          setFormData({ name: "", email: "", message: "" });
+        },
+        (error) => {
+          console.log("FAILED...", error);
+          alert("Failed to send message. Please try again.");
+        }
+      )
+      .finally(() => {
+        setIsSending(false);
+      });
   };
 
   return (
-    <div className="max-w-lg mx-auto p-6 bg-gray-900 text-white rounded-xl shadow-lg">
-      <h2 className="text-2xl font-bold text-center mb-4">Contact Me</h2>
+    <div className=" mx-auto p-6 text-white rounded-xl">
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"
@@ -52,13 +74,14 @@ const ContactForm = () => {
         />
         <button
           type="submit"
-          className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded-lg transition duration-300"
+          className="w-full bg-[#112D4E] dark:bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded-lg transition duration-300 disabled:opacity-50"
+          disabled={isSending}
         >
-          Send Message
+          {isSending ? "Sending..." : "Send Message"}
         </button>
       </form>
     </div>
   );
 };
 
-export default ContactForm;
+export default Contact;
